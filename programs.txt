@@ -1,0 +1,916 @@
+    static int solveMeFirst(int a, int b) {
+        return a+b;
+   }
+
+   
+ public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int _a = in.nextInt();
+        int _b = in.nextInt();
+        int sum = solveMeFirst(_a, _b);
+        System.out.println(sum);
+   }
+}
+-----------------------------------------------------------------
+import java.util.Scanner;
+
+public class Solution {
+
+    /*
+     * Complete the 'simpleArraySum' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY ar as parameter.
+     */
+
+    public static int simpleArraySum(int[] ar, int n) {
+    // Write your code here int ar_sum =0;
+    int ar_sum = 0;
+    for(int i=0;i<n;i++)
+    {
+        ar_sum= ar_sum + ar[i];
+    }
+    return ar_sum;
+    }
+
+
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] ar= new int[n];
+         for(int i=0;i<n;i++){
+             ar[i]=sc.nextInt();
+        }
+        int summa= simpleArraySum(ar,n);
+        System.out.println(summa);
+    }
+}
+----------------------------------------------------------------
+public class Main {
+        /*
+         * Complete the 'compareTriplets' function below.
+         *
+         * The function is expected to return an INTEGER_ARRAY.
+         * The function accepts following parameters:
+         *  1. INTEGER_ARRAY a
+         *  2. INTEGER_ARRAY b
+         */
+
+        public static int[] compareTriplets(int[] a,int[] b ) {
+            // Write your code here
+            int a1 =0;int b1=0;
+            int [] ab = new int[2];
+            for (int i=0;i<3;i++)
+            {
+                if (a[i] > b[i])
+                    a1 ++;
+                if( a[i] < b[i])
+                    b1 ++;
+            }
+            ab[0]=a1;
+            ab[1]=b1;
+            return ab;
+        }
+        public static void main(String[] args){
+            Scanner sc = new Scanner(System.in);
+            int [] a = new int[3];
+            int [] b = new int[3];
+            int [] c = new int[2];
+            for (int i=0;i<3;i++)
+            {
+                a[i] = sc.nextInt();
+            }
+            for (int i=0;i<3;i++)
+            {
+                b[i] = sc.nextInt();
+            }
+            c = compareTriplets(a,b);
+            for(int i=0;i<2;i++)
+            System.out.print(c[0] +" "+ c[1]);
+
+        }
+    }
+----------------------------------------------------------------
+public class Solution {
+    /*
+     * Complete the 'aVeryBigSum' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts LONG_INTEGER_ARRAY ar as parameter.
+     */
+
+    public static long aVeryBigSum(int[] ar,int n) {
+    // Write your code here
+    long summa= 0;
+     for (int i=0;i<n;i++){
+     summa = summa+  ar[i];
+     }
+     return summa;
+    }
+
+
+
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] ar = new int[n];
+        for (int i=0;i<n;i++){
+         ar[i]=sc.nextInt();}
+         
+         long summa = aVeryBigSum(ar,n);
+         System.out.println(summa);
+        
+    }
+}
+--------------------------------------------------------------
+import java.util.Scanner;
+import java.text.DecimalFormat;
+
+public class Solution {
+    /*
+     * Complete the 'plusMinus' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static void plusMinus(int[] ar, int n) {
+    // Write your code here
+    DecimalFormat df= new DecimalFormat("#.######");
+    double pos =0,neg=0,z=0;
+    for (int i=0;i<n;i++){
+    if (ar[i]==0)
+    z++;
+    else if(ar[i]>0)
+    pos++;
+    else 
+    neg++;
+    }
+    
+    System.out.println(df.format(pos/n));
+       System.out.println(df.format(neg/n));
+          System.out.println(df.format(z/n));
+    }
+
+
+
+
+    public static void main(String[] args) 
+    { 
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] ar = new int[n];
+        for (int i=0;i<n;i++)
+        ar[i]=sc.nextInt();
+        plusMinus(ar,n);
+        
+        
+    }
+
+}
+---------------------------------------------------------------
+import java.util.Scanner;
+
+public class Solution {
+
+    /*
+     * Complete the 'staircase' function below.
+     *
+     * The function accepts INTEGER n as parameter.
+     */
+
+    public static void staircase(int n) {
+    // Write your code here
+    char[][] ar = new char [n][n];
+    for(int i=0; i<n;i++){
+    for(int j=0;j<n-1-i;j++){
+    ar[i][j]=' ';
+    }
+    for(int k=n-1;k>n-2-i;k--){
+    ar[i][k]='#';}
+    }
+   for(int i=0; i<n;i++){
+    for(int j=0;j<n;j++) {
+    System.out.print(ar[i][j]);
+    }
+    System.out.println();
+    }
+    }
+
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        staircase(n);
+}
+}
+-----------------------------------------------------------------
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Solution {
+
+    /*
+     * Complete the 'miniMaxSum' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static void miniMaxSum(long [] ar) {
+    // Write your code here
+    long x=0,y=0;
+    for(int i =1;i<5;i++)
+    y=y+ar[i];
+    for(int i =0;i<4;i++)
+    x=x+ar[i];   
+    System.out.print(x +" "+ y);
+    }
+  public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+    
+      long [] ar = new long[5];
+       for(int i=0;i<5;i++)
+       ar[i]= sc.nextInt();
+        Arrays.sort(ar);
+       miniMaxSum(ar);
+    }
+}
+-----------------------------------------------------------------
+public class Solution {
+
+    /*
+     * Complete the 'gradingStudents' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER_ARRAY grades as parameter.
+     */
+
+    public static int [] gradingStudents(int [] ar,int n) {
+    // Write your code here
+    int multipleOfFive = 0;
+    for(int i=0;i<n;i++)
+    if (ar[i]>=38){
+     multipleOfFive = 5 - (ar[i]%5) + ar[i];
+     if(multipleOfFive-ar[i]<3)
+     ar[i]=multipleOfFive;
+    }
+    return ar;
+    }
+
+
+
+
+    public static void main(String[] args) {
+        Scanner sc =  new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] ar = new int[n];
+        int [] res = new int[n];
+        for(int i=0;i<n;i++)
+        ar[i]=sc.nextInt();
+        res = gradingStudents(ar,n);
+        for (int i=0;i<n;i++)
+        System.out.println(res[i]);
+       
+    }
+}
+----------------------------------------------------------------
+public class Solution {
+
+    /*
+     * Complete the 'countApplesAndOranges' function below.
+     *
+     * The function accepts following parameters:
+     *  1. INTEGER s
+     *  2. INTEGER t
+     *  3. INTEGER a
+     *  4. INTEGER b
+     *  5. INTEGER_ARRAY apples
+     *  6. INTEGER_ARRAY oranges
+     */
+
+    public static void countApplesAndOranges(int s, int t, int a, int b, int [] apples, int [] oranges) {
+    // Write your code here
+    int loc1 = 0,loc2=0;
+    for (int i = 0;i< apples.length;i++)
+    if((apples[i]+a)>=s&&(apples[i]+a)<=t)
+    loc1++;
+    for (int i = 0;i< oranges.length;i++)
+    if((oranges[i]+b)>=s&&(oranges[i]+b)<=t)
+    loc2++;
+    System.out.println(loc1);
+     System.out.println(loc2);
+
+    }
+
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int s = sc.nextInt();
+        int t = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int m = sc.nextInt();
+        int n= sc.nextInt();
+        int [] apples = new int[m];
+        int [] oranges = new int [n];
+        for (int i = 0;i< apples.length;i++)
+        apples[i]=sc.nextInt();
+        for (int i = 0;i< oranges.length;i++)
+        oranges[i]=sc.nextInt();
+        countApplesAndOranges(s,t,a,b,apples,oranges);
+        
+}
+}
+-----------------------------------------------------------------
+public static String kangaroo(int x1, int v1, int x2, int v2) {
+    // Write your code here
+    String ans = " ";
+    if (x2>x1&&v2>v1)
+     ans="NO";
+    else{
+        while(x2>x1)
+        {x1=x1+v1;
+        x2=x2+v2;
+        if(x1==x2){
+        ans="YES";
+        break;}
+        if(x1>x2){
+        ans="NO";
+    }}}
+return ans;
+    }
+
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc = new Scanner (System.in);
+        int x1=sc.nextInt();
+        int v1=sc.nextInt();
+        int x2=sc.nextInt();
+        int v2=sc.nextInt();
+        String res= kangaroo(x1,v1,x2,v2);
+        System.out.print(res);
+        
+    }
+}
+-----------------------------------------------------------------
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Solution {
+
+    /*
+     * Complete the 'getTotalX' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY a
+     *  2. INTEGER_ARRAY b
+     */
+
+    public static int getTotalX(int[] a, int[] b,int n,int m) {
+    // Write your code here
+    int count =0;
+    for(int i=a[n-1];i<=b[0];i++){
+    boolean fact = true;
+    for(int j=0;j<n;j++){
+    if(i%a[j]!=0){
+    fact = false;
+    break;}}
+    for(int j =0;j<m;j++){
+        if(b[j]%i!=0){
+            fact = false;
+            break;
+        }
+    }
+    if (fact == true)
+    count++;
+    }
+    return count;}
+
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int [] a = new int[n];
+        int [] b = new int[m];
+        for(int i=0;i<n;i++)
+        a[i]= sc.nextInt();
+        for(int i =0;i<m;i++)
+        b[i]=sc.nextInt();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int res = getTotalX(a,b,n,m);
+       System.out.println(res);
+    }
+}
+----------------------------------------------------------------
+import java.util.Scanner;
+
+public class Solution {
+    /*
+     * Complete the 'breakingRecords' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER_ARRAY scores as parameter.
+     */
+
+    public static int [] breakingRecords(int [] ar) {
+    // Write your code here
+    int max = ar[0];int min = ar[0];int maxc=0;int minc=0;
+    int [] sol = new int[2];
+    for(int i=0;i<ar.length;i++){
+    if(max<ar[i]){
+    max=ar[i];
+    maxc++;}
+     if(min>ar[i]){
+    min=ar[i];
+    minc++;}
+    }
+    sol[0]=maxc;sol[1]=minc;
+    return sol;}
+
+
+
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] ar = new int [n];
+        for(int i=0;i<n;i++)
+        ar[i]=sc.nextInt();
+        int [] res = breakingRecords(ar);
+        for(int i=0;i<2;i++)
+        System.out.print(res[i] + " "); 
+        
+    }
+}
+----------------------------------------------------------------
+import java.util.Scanner;
+public class Solution {
+    /*
+     * Complete the 'birthday' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY s
+     *  2. INTEGER d
+     *  3. INTEGER m
+     */
+
+    public static int birthday(int[] s, int d, int n, int m) {
+    // Write your code here
+    int count=0;
+    for(int i =0;i<n-m+1;i++){
+    int sum = 0;
+    for(int j=i;j<i+m;j++)
+    sum =sum+ s[j];
+     if ( sum==d)
+    count++;
+    }
+    return count;
+}
+
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] s = new int[n];
+        for(int i=0;i<n;i++)
+        s[i]=sc.nextInt();
+        int d=sc.nextInt();
+        int m = sc.nextInt();
+        int res = birthday(s,d,n,m);
+        System.out.println(res);
+        
+    }
+}
+-----------------------------------------------------------------
+import java.util.Scanner;
+
+public class Solution {
+
+    /*
+     * Complete the 'divisibleSumPairs' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER n
+     *  2. INTEGER k
+     *  3. INTEGER_ARRAY ar
+     */
+
+    public static int divisibleSumPairs(int n, int k, int[] ar) {
+    // Write your code here
+    int count = 0;
+    for(int i=0;i<n-1;i++){
+    for(int j=1;j<n;j++){
+        int summa=0;
+        if (i<j){
+        summa = ar[i]+ar[j];
+    if(summa%k==0)
+    count++;}}}
+    return count;
+    }
+
+
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int [] ar = new int[n];
+        for(int i=0;i<n;i++)
+        ar[i]= sc.nextInt();
+        int res = divisibleSumPairs(n,k,ar);
+        System.out.println(res);
+    }
+}
+-----------------------------------------------------------------
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Solution {
+
+    /*
+     * Complete the 'migratoryBirds' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static int migratoryBirds(int [] ar,int n) {
+    // Write your code here
+    int [] b = new int[6];
+    int max=0;int result =1;
+    for(int i=0;i<n;i++){
+    b[ar[i]]++;
+    }
+    for(int i=1;i<=5;i++)
+    if(b[i]>max){
+        result =i;
+        max=b[i];
+    }
+   return result;
+    }
+
+
+
+
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] ar = new int[n];
+        for(int i=0;i<n;i++)
+        ar[i]=sc.nextInt();
+        int res=migratoryBirds(ar, n);
+        System.out.println(res);
+    }
+}
+-----------------------------------------------------------------
+import java.util.Scanner;
+
+public class Solution {
+    /*
+     * Complete the 'timeConversion' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static String timeConversion(String s) {
+    // Write your code here
+    String str =" ";
+    if(s.substring(0,2).equals("12")&&s.contains("AM")){
+    str = "00";
+    s= str + s.substring(2,s.length());}
+    else if(!s.substring(0,2).equals("12")&&s.contains("PM")){
+    str = Integer.toString(Integer.parseInt(s.substring(0,2))+12);
+    s= str + s.substring(2,s.length());
+    }
+    return s.substring(0,s.length()-2);
+    }
+
+
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        String k = timeConversion(s);
+        System.out.println(k);   
+    }
+}
+-----------------------------------------------------------------
+import java.util.Scanner;
+public class Solution {
+
+    /*
+     * Complete the 'dayOfProgrammer' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts INTEGER year as parameter.
+     */
+
+    public static String dayOfProgrammer(int y) {
+    // Write your code here
+    String s = " ";
+    if(y>=1700&&y<=1917){
+        if(y%4==0){
+        String d ="12",m="09";
+        s = d+"."+m+"."+Integer.toString(y);}
+        else {
+         String d ="13",m="09";
+        s = d+"."+m+"."+Integer.toString(y);}
+    }
+    if(y==1918){
+      String d ="26",m="09";
+        s = d+"."+m+"."+Integer.toString(y);}
+    if(y>=1919){
+        if((y%4==0&&y%100!=0)||y%400==0){
+        String d ="12",m="09";
+        s = d+"."+m+"."+Integer.toString(y);}
+        else {
+         String d ="13",m="09";
+        s = d+"."+m+"."+Integer.toString(y);}
+    }
+        return s;
+    }
+
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc = new Scanner(System.in);
+        int n =sc.nextInt();
+        String res = dayOfProgrammer(n);
+        System.out.println(res);
+        
+        
+    }
+}
+-----------------------------------------------------------------
+public class Solution {
+
+    /*
+     * Complete the 'bonAppetit' function below.
+     *
+     * The function accepts following parameters:
+     *  1. INTEGER_ARRAY bill
+     *  2. INTEGER k
+     *  3. INTEGER b
+     */
+
+    public static void bonAppetit(int [] bill, int n, int k, int b) {
+    // Write your code here
+    int summa=0,a=0;
+    for(int i=0;i<n;i++){
+    
+    if (i!=k)
+    {
+       summa = summa + bill[i]; 
+    }}
+    for(int i=0;i<n-1;i++)
+    a = summa/2;
+    if (a == b)
+    System.out.println("Bon Appetit");
+    else 
+    System.out.println(b-a);
+
+    }
+
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc=new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int[] bill = new int[n];
+        for(int i=0;i<n;i++)
+        bill[i]=sc.nextInt();
+        int b = sc.nextInt();
+        bonAppetit(bill,n,k,b);
+        
+    }
+}
+-----------------------------------------------------------------
+public class Solution {
+
+    /*
+     * Complete the 'sockMerchant' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER n
+     *  2. INTEGER_ARRAY ar
+     */
+
+    public static int sockMerchant(int n, int[] ar) {
+    // Write your code here
+    int count =0;
+    for(int i=0;i<n-1;i++){
+    if(ar[i]==ar[i+1]){
+    count++;
+    i++;}
+    }
+    return count;
+
+}
+
+
+    public static void main(String[] args)  {
+       Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int [] ar = new int[n];
+       for(int i =0;i<n;i++)
+       ar[i] = sc.nextInt();
+       Arrays.sort(ar);
+       int res= sockMerchant(n,ar);
+       System.out.println(res);
+    }
+}
+----------------------------------------------------------------
+public class Solution {
+    /*
+     * Complete the 'pageCount' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER n
+     *  2. INTEGER p
+     */
+    public static int pageCount(int n, int p) {
+    // Write your code here
+    int calc=0;
+    if (n%2==0&&p%2!=0)
+     calc = Math.min(p/2,(n-p+1)/2);
+    else 
+     calc = Math.min(p/2,(n-p)/2);
+    return calc;
+
+    }
+
+
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int p =sc.nextInt();
+        int res = pageCount(n,p);
+        System.out.println(res);
+    }
+}
+----------------------------------------------------------------
+public class Solution {
+
+    /*
+     * Complete the 'countingValleys' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts following parameters:
+     *  1. INTEGER steps
+     *  2. STRING path
+     */
+
+    public static int countingValleys(int st, String p) {
+    // Write your code here
+    int level = 0,valley =0;
+    for(int i=0;i<st;i++){
+    if(p.charAt(i)=='U'){
+    level++;}
+    else if (p.charAt(i)=='D'){
+     if (level==0){
+     valley++;}
+     level--;}}
+     return valley;
+
+    }
+
+
+
+    public static void main(String[] args)  {
+        Scanner sc =new Scanner(System.in);
+        int st = sc.nextInt();
+        String p = sc.next();
+        int res = countingValleys(st,p);
+        System.out.println(res);
+       
+    }
+}
+-----------------------------------------------------------------
+public class Solution {
+    public static int getMoneySpent (int [] key,int [] dri, int b,int n,int m){
+        int max =0;
+        for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+        if (key[i]+dri[j]<=b){
+      int temp = key[i]+dri[j];
+       if (temp>=max)
+       max = temp;}
+        }
+        }
+        if (max==0)
+        max = -1;
+        return max;   
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        int b =sc.nextInt();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[] key = new int[n];
+        for(int i=0;i<n;i++){
+        key[i] = sc.nextInt();}
+        Arrays.sort(key);
+        int [] dri = new int[m];
+        for(int i=0;i<m;i++){
+        dri[i]= sc.nextInt();}
+        Arrays.sort(dri);
+        int res = getMoneySpent(key,dri,b,n,m);
+        System.out.println(res);
+    }
+    
+}
+-----------------------------------------------------------------
+public class Solution {
+    public static String catAndMouse(int x,int y,int z){
+        int diff1=0,diff2=0;
+        String s = "Mouse C";
+        diff1= Math.abs(x-z);
+        diff2=Math.abs(y-z);
+        if(diff1<diff2)
+        s = "Cat A";
+        else if(diff1>diff2)
+        s= "Cat B";
+        return s;
+    
+    }
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc = new Scanner(System.in);
+        String res = " ";
+        int q = sc.nextInt();
+        for(int i=0;i<q;i++){
+        int x =sc.nextInt();
+        int y = sc.nextInt();
+        int z = sc.nextInt();
+         res = catAndMouse(x,y,z);
+        System.out.println(res);}
+    }
+}
+-----------------------------------------------------------------
+public class Solution {
+
+    /*
+     * Complete the 'pickingNumbers' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY a as parameter.
+     */
+
+    public static int pickingNumbers(int [] ar,int n) {
+    // Write your code here
+    int [] fre = new int[100];
+    for (int i=0;i<n;i++){
+        fre[ar[i]]++;
+    }
+    int max=0;
+    for (int i=0;i<99;i++)
+    max=Math.max(max,fre[i]+fre[i+1]);
+    return max;}
+
+
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int [] ar = new int [n];
+        for(int i=0;i<n;i++)
+        ar[i]= sc.nextInt();
+        Arrays.sort(ar);
+        int res = pickingNumbers(ar,n);
+        System.out.println(res);
+       
+    }
+}
+
+
